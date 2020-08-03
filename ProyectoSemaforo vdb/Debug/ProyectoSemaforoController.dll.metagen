@@ -1,0 +1,32 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly ProyectoSemaforoController, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly ProyectoSemaforoModel, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class ProyectoSemaforoController.GestorLED: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CargarLEDS(): PrivateScope, Public, HideBySig
+    AgregarLED(LED): PrivateScope, Public, HideBySig
+    ObtenerCantLEDS(): PrivateScope, Public, HideBySig
+    ObtenerLED(Int32): PrivateScope, Public, HideBySig
+    BuscarLED(Int32): PrivateScope, Public, HideBySig
+    Eliminar(Int32): PrivateScope, Public, HideBySig
+    Deserializar(): PrivateScope, Public, HideBySig
+    Serializar(): PrivateScope, Public, HideBySig
+Class ProyectoSemaforoController.GestorSemaforo: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AgregarSemaforo(Semaforo): PrivateScope, Public, HideBySig
+    ObtenerCantSemaforos(): PrivateScope, Public, HideBySig
+    ObtenerSemaforo(Int32): PrivateScope, Public, HideBySig
+    BuscarSemaforosCuadra(String): PrivateScope, Public, HideBySig
+    Eliminar(Int32): PrivateScope, Public, HideBySig
+    Serializar(): PrivateScope, Public, HideBySig
+    Deserializar(): PrivateScope, Public, HideBySig

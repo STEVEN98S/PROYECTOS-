@@ -1,0 +1,70 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly ProyectoSemaforoModel, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class ProyectoSemaforoModel.Usuario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Nombre : Public
+    System.String Apellido : Public
+    Int32 codigo : Public
+Class ProyectoSemaforoModel.Ambulancia: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String, ProyectoSemaforoModel.Usuario): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Placa : Public
+    System.String Ruta : Public
+    ProyectoSemaforoModel.Usuario UsuarioAmb : Public
+Class ProyectoSemaforoModel.Hardware: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 codigo : Public
+    System.String tipo : Public
+Class ProyectoSemaforoModel.Buzzer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ProyectoSemaforoModel.Hardware
+    Void .ctor(Int32, Int32, Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 tiempo : Public
+    Int32 frecuencia : Public
+Class ProyectoSemaforoModel.Carril: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Sentido : Public
+    Int32 NumCarril : Public
+Class ProyectoSemaforoModel.LED: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :ProyectoSemaforoModel.Hardware
+    Void .ctor(System.String, Int32, Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String color : Public
+    Int32 tiempo : Public
+Class ProyectoSemaforoModel.Semaforo: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.Collections.Generic.List`1[ProyectoSemaforoModel.LED]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 codigo : Public
+    System.String cuadra : Public
+    System.Collections.Generic.List`1[ProyectoSemaforoModel.LED] ListaLEDs : Public
+Class ProyectoSemaforoModel.Trafico: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Hora : Public
+    Int32 Densidad : Public
+Class ProyectoSemaforoModel.Cuadra: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, ProyectoSemaforoModel.Semaforo, System.Collections.Generic.List`1[ProyectoSemaforoModel.Carril], ProyectoSemaforoModel.Trafico): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 NumCuadra : Public
+    System.String Jerarquia : Public
+    ProyectoSemaforoModel.Semaforo SemaforoCuadra : Public
+    System.Collections.Generic.List`1[ProyectoSemaforoModel.Carril] ListaCarriles : Public
+    ProyectoSemaforoModel.Trafico TraficoCuadra : Public
+Class ProyectoSemaforoModel.Presion: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ProyectoSemaforoModel.Hardware
+    Void .ctor(Int32, Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 PesoSensado : Public
+Class ProyectoSemaforoModel.Ultrasonido: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ProyectoSemaforoModel.Hardware
+    Void .ctor(Int32, Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 DistanciaMedida : Public
