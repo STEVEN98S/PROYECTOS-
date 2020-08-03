@@ -1,0 +1,98 @@
+CREATE TABLE [dbo].[Carta] (
+    [Codigo] INT           IDENTITY (1, 1) NOT NULL,
+    [Fecha]  VARCHAR (10)  NOT NULL,
+    [Nombre] VARCHAR (100) NOT NULL,
+    [Estado] CHAR (1)      NOT NULL,
+    CONSTRAINT [PK_Carta] PRIMARY KEY CLUSTERED ([Codigo] ASC)
+);
+
+CREATE TABLE [dbo].[Cliente] (
+    [dni]            VARCHAR (10)  NOT NULL,
+    [Nombres]        VARCHAR (50)  NULL,
+    [ApePaterno]     VARCHAR (50)  NULL,
+    [ApeMaterno]     VARCHAR (50)  NULL,
+    [email]          VARCHAR (100) NULL,
+    [telefono]       VARCHAR (50)  NULL,
+    [genero]         CHAR (1)      NULL,
+    [nroClienteFrec] INT           NULL,
+    PRIMARY KEY CLUSTERED ([dni] ASC)
+);
+
+CREATE TABLE [dbo].[Encargado] (
+    [DNI]          CHAR (23)     NOT NULL,
+    [Nombres]      VARCHAR (50)  NULL,
+    [ApePaterno]   VARCHAR (50)  NULL,
+    [ApeMaterno]   VARCHAR (50)  NULL,
+    [email]        VARCHAR (100) NULL,
+    [Telefono]     VARCHAR (50)  NULL,
+    [Genero]       CHAR (1)      NULL,
+    [FechaIngreso] VARCHAR (10)  NULL,
+    CONSTRAINT [PK_Encargado] PRIMARY KEY CLUSTERED ([DNI] ASC)
+);
+
+CREATE TABLE [dbo].[Pedido] (
+    [Codigo]      INT            NOT NULL,
+    [Nombre]      VARCHAR (100)  NULL,
+    [Descripcion] VARCHAR (1000) NULL,
+    [Precio]      FLOAT (53)     NULL,
+    [codReserva]  INT            NULL,
+    [codProducto] INT            NULL,
+    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+);
+
+CREATE TABLE [dbo].[Producto] (
+    [Codigo]      INT            IDENTITY (1, 1) NOT NULL,
+    [Nombre]      VARCHAR (100)  NOT NULL,
+    [Descripcion] VARCHAR (1000) NULL,
+    [Precio]      FLOAT (53)     NOT NULL,
+    CONSTRAINT [PK_Producto] PRIMARY KEY CLUSTERED ([Codigo] ASC)
+);
+
+CREATE TABLE [dbo].[ProductoxCarta] (
+    [CodigoProducto] INT NOT NULL,
+    [CodigoCarta]    INT NOT NULL,
+    CONSTRAINT [PK_ProductoxCarta] PRIMARY KEY CLUSTERED ([CodigoProducto] ASC, [CodigoCarta] ASC),
+    CONSTRAINT [FK_ProductoxCarta_Carta] FOREIGN KEY ([CodigoCarta]) REFERENCES [dbo].[Carta] ([Codigo]),
+    CONSTRAINT [FK_ProductoxCarta_Producto] FOREIGN KEY ([CodigoProducto]) REFERENCES [dbo].[Producto] ([Codigo])
+);
+
+CREATE TABLE [dbo].[Reserva] (
+    [Codigo]         INT          NOT NULL,
+    [Fecha]          VARCHAR (10) NULL,
+    [Hora]           VARCHAR (10) NULL,
+    [Precio]         FLOAT (53)   NULL,
+    [nroMesa]        INT          NULL,
+    [codRestaurante] INT          NULL,
+    [codCliente]     INT          NULL,
+    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+);
+
+CREATE TABLE [dbo].[Restaurante] (
+    [Codigo]       INT           IDENTITY (1, 1) NOT NULL,
+    [Nombre]       VARCHAR (100) NULL,
+    [Descripcion]  VARCHAR (500) NULL,
+    [telefono]     VARCHAR (20)  NULL,
+    [email]        VARCHAR (100) NULL,
+    [codEncargado] INT           NULL,
+    [codUbicacion] INT           NULL,
+    CONSTRAINT [PK_Restaurante] PRIMARY KEY CLUSTERED ([Codigo] ASC)
+);
+
+CREATE TABLE [dbo].[RestaurantexCarta] (
+    [CodRestaurante] INT      NOT NULL,
+    [CodCarta]       INT      NOT NULL,
+    [Activo]         CHAR (1) NULL,
+    CONSTRAINT [PK_RestaurantexCarta] PRIMARY KEY CLUSTERED ([CodRestaurante] ASC, [CodCarta] ASC),
+    CONSTRAINT [FK_RestaurantexCarta_Restaurante] FOREIGN KEY ([CodRestaurante]) REFERENCES [dbo].[Restaurante] ([Codigo]),
+    CONSTRAINT [FK_RestaurantexCarta_Carta] FOREIGN KEY ([CodCarta]) REFERENCES [dbo].[Carta] ([Codigo])
+);
+
+CREATE TABLE [dbo].[Ubicacion] (
+    [Codigo]       INT           NOT NULL,
+    [Direccion]    VARCHAR (100) NULL,
+    [CodigoPostal] VARCHAR (10)  NULL,
+    [Latitud]      INT           NULL,
+    [Longitud]     INT           NULL,
+    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+);
+
