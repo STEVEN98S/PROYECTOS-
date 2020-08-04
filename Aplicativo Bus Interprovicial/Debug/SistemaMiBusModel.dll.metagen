@@ -1,0 +1,64 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly SistemaMiBusModel, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class SistemaMiBusModel.Asiento: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 codigo : Public
+    Int32 numero : Public
+    System.String tipo : Public
+Class SistemaMiBusModel.Bus: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, Int32, Double, System.Collections.Generic.List`1[SistemaMiBusModel.Asiento]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 codigo : Public
+    System.String placa : Public
+    System.String tipo : Public
+    Int32 cantidadPasajeros : Public
+    Double capacidadEquipaje : Public
+    System.Collections.Generic.List`1[SistemaMiBusModel.Asiento] listaAsientos : Public
+Class SistemaMiBusModel.Destino: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 codigo : Public
+    System.String ciudad : Public
+    System.String provincia : Public
+    System.String departamento : Public
+Class SistemaMiBusModel.Itinerario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, SistemaMiBusModel.Destino, SistemaMiBusModel.Destino): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 codigo : Public
+    System.String horaLlegada : Public
+    System.String horaSalida : Public
+    SistemaMiBusModel.Destino objDestinoLlegada : Public
+    SistemaMiBusModel.Destino objDestinoSalida : Public
+Class SistemaMiBusModel.Persona: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String dni : Public
+    System.String nombre : Public
+    System.String apellidoPaterno : Public
+    System.String apellidoMaterno : Public
+Class SistemaMiBusModel.Pasajero: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :SistemaMiBusModel.Persona
+    Void .ctor(System.String, System.String, System.String, System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 nroPasajeroFrecuente : Public
+Class SistemaMiBusModel.Pasaje: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Double, SistemaMiBusModel.Asiento, SistemaMiBusModel.Pasajero): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 codigo : Public
+    Double precio : Public
+    SistemaMiBusModel.Asiento objAsiento : Public
+    SistemaMiBusModel.Pasajero objPasajero : Public
+Class SistemaMiBusModel.Programacion: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, SistemaMiBusModel.Itinerario, SistemaMiBusModel.Bus, System.Collections.Generic.List`1[SistemaMiBusModel.Pasaje]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 codigo : Public
+    System.String fechaSalida : Public
+    SistemaMiBusModel.Itinerario objItinerario : Public
+    SistemaMiBusModel.Bus objBus : Public
+    System.Collections.Generic.List`1[SistemaMiBusModel.Pasaje] listaPasajes : Public

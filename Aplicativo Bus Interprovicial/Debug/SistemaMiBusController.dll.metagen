@@ -1,0 +1,67 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly SistemaMiBusController, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly SistemaMiBusModel, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class SistemaMiBusController.GestorAsiento: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AbrirConexion(): PrivateScope, Public, HideBySig
+    CerrarConexion(): PrivateScope, Public, HideBySig
+    CargarAll(): PrivateScope, Public, HideBySig
+    BuscarxCodigoBus(Int32): PrivateScope, Public, HideBySig
+    BuscarxCodigo(Int32): PrivateScope, Public, HideBySig
+Class SistemaMiBusController.GestorBus: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AbrirConexion(): PrivateScope, Public, HideBySig
+    CerrarConexion(): PrivateScope, Public, HideBySig
+    CargarAll(): PrivateScope, Public, HideBySig
+    BuscarxCodigo(Int32): PrivateScope, Public, HideBySig
+Class SistemaMiBusController.GestorDestino: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AbrirConexion(): PrivateScope, Public, HideBySig
+    CerrarConexion(): PrivateScope, Public, HideBySig
+    CargarAll(): PrivateScope, Public, HideBySig
+    BuscarxCodigo(Int32): PrivateScope, Public, HideBySig
+Class SistemaMiBusController.GestorItinerario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AbrirConexion(): PrivateScope, Public, HideBySig
+    CerrarConexion(): PrivateScope, Public, HideBySig
+    CargarAll(): PrivateScope, Public, HideBySig
+    BuscarxCodigo(Int32): PrivateScope, Public, HideBySig
+Class SistemaMiBusController.GestorPasaje: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AbrirConexion(): PrivateScope, Public, HideBySig
+    CerrarConexion(): PrivateScope, Public, HideBySig
+    CargarAll(): PrivateScope, Public, HideBySig
+    BuscarxCodigoProgramacion(Int32): PrivateScope, Public, HideBySig
+    AgregarPasaje(Int32, String): PrivateScope, Public, HideBySig
+Class SistemaMiBusController.GestorPasajero: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AbrirConexion(): PrivateScope, Public, HideBySig
+    CerrarConexion(): PrivateScope, Public, HideBySig
+    CargarAll(): PrivateScope, Public, HideBySig
+    BuscarxCodigo(String): PrivateScope, Public, HideBySig
+    AgregarPasajero(String, String, String, String, Int32): PrivateScope, Public, HideBySig
+Class SistemaMiBusController.GestorProgramacion: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AbrirConexion(): PrivateScope, Public, HideBySig
+    CerrarConexion(): PrivateScope, Public, HideBySig
+    CargarAll(): PrivateScope, Public, HideBySig
+    BuscarxCodigo(Int32): PrivateScope, Public, HideBySig
+    BuscarxFecha(String): PrivateScope, Public, HideBySig
+    BuscarxFechaDestinoSalida(String, String): PrivateScope, Public, HideBySig
+    BuscarxFechayDestinos(String, String, String): PrivateScope, Public, HideBySig
+    AgregarProgramacionPasaje(Int32, Int32): PrivateScope, Public, HideBySig
