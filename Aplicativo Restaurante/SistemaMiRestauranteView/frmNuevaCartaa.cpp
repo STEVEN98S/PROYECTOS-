@@ -1,0 +1,2 @@
+#include "frmNuevaCartaa.h"
+

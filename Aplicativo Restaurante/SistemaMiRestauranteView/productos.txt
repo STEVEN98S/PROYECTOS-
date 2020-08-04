@@ -1,0 +1,3 @@
+1;aji de gallina;Plato peruano muy delicioso; 14.50
+2;arroz con pato;Plato del Norte Peruano;15.30
+3;seco de pollo;Plato a base de especias;16.50
